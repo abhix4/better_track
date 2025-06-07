@@ -27,21 +27,6 @@ export const authOptions: NextAuthOptions = {
       }
     }),
   ],
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user?.username) {
-        token.username = user.username;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      if (token?.username) {
-        session.user.username = token.username || "";
-      }
-      return session;
-    }
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-  debug: true,
+ 
   
 };
