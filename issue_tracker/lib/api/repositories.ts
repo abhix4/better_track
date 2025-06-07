@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { toast } from 'sonner';
 
 // Use the same base URL for all requests
 const BASE_URL = "https://bfbb6ed4-test-worker.as8998013.workers.dev";
@@ -15,32 +16,44 @@ export async function getRepositories(username: string): Promise<any> {
     return data;
    } catch (error) {
     console.log(error);
-    throw error; // Re-throw so React Query can handle it properly
+    toast.error("Failed to fetch repositories")
    }
 }
 
 export async function createRepository(name: string, owner: string): Promise<any> {
-    const { data } = await axios.post(`${BASE_URL}/repo/create`, {
+   try {
+      const { data } = await axios.post(`${BASE_URL}/repo/create`, {
         name: name,
         owner: owner
     });
     return data;
+   } catch (error) {
+    toast.error("Failed to create repository")
+   }
 }
 
 export async function subscribeRepository(username: string, name: string, owner: string): Promise<any> {
-    const { data } = await axios.post(`${BASE_URL}/repo/subscribe`, {
+   try {
+      const { data } = await axios.post(`${BASE_URL}/repo/subscribe`, {
         username: username,
         name: name,
         owner: owner
     });
     return data;
+   } catch (error) {
+    toast.error("Failed to subscribe")
+   }
 }
 
 export async function unsubscribeRepository(username: string, name: string, owner: string): Promise<any> {
-    const { data } = await axios.post(`${BASE_URL}/repo/unsubscribe`, {
+   try {
+     const { data } = await axios.post(`${BASE_URL}/repo/unsubscribe`, {
         username: username,
         name: name,
         owner: owner
     });
     return data;
+   } catch (error) {
+    toast.error("Failed to unsubscribe")
+   }
 }

@@ -69,7 +69,6 @@ export default function RepositoriesTable({repos,username}:RepositoriesTableProp
                 <TableCell className="text-right cursor-pointer"><DropdownMenuTrigger><EllipsisVertical size={12}/></DropdownMenuTrigger></TableCell>       
                 <DropdownMenuContent>
                     <DropdownMenuItem onClick={() => mutate({owner:repo.owner,name:repo.name,username:username})}>Unsubscribe</DropdownMenuItem>
-                    <DropdownMenuItem>Delete</DropdownMenuItem>
                 </DropdownMenuContent>
                 </DropdownMenu>
 

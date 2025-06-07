@@ -4,6 +4,7 @@ import { login } from "@/lib/api/user"
 import { useSession } from "next-auth/react"
 import { redirect, usePathname, useRouter } from "next/navigation"
 import { useEffect } from "react"
+import { toast } from "sonner"
 
 export default function SpacePage(){
     const { data: session, status } = useSession()
@@ -36,6 +37,7 @@ export default function SpacePage(){
     }
 
     if(session){
+        toast.success(`Welcome back ${username} 🚀`,)
         router.push(`${path}/${username}/repositories`)
     }
 }

@@ -25,7 +25,7 @@ export default function Navbar(){
            className="rounded-full overflow-hidden"
            alt="logo"
            />
-           <Button onClick={() => signOut()}>Logout</Button>
+           <Button onClick={() => signOut()} className="text-xs h-8 cursor-pointer">Logout</Button>
            </div>
            <div className="flex gap-4">
             <div className={`cursor-pointer transition-all duration-100 ease-in ${tab === 'repositories' && 'border-b-2 border-black'} ` } onClick={ () => router.push(`/space/${username}/repositories`)} >Repositories</div>

@@ -1,6 +1,7 @@
 // hooks/useUsers.ts
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { createRepository, getRepositories, subscribeRepository, unsubscribeRepository } from '@/lib/api/repositories';
+import { toast } from 'sonner';
 
 
 export function useGetRepos(username:string) {
@@ -25,6 +26,7 @@ export function useSubscribeToRepo() {
         // Update the cache or refetch subscription status
         queryClient.invalidateQueries({ queryKey: ['subscription', username, name, owner] });
         queryClient.invalidateQueries({ queryKey: ['repositories', username] });
+        toast.success("Subscribed successfully")
       },
     });
 }
@@ -39,6 +41,7 @@ export function useCreateRepo() {
       onSuccess: (_, { username }) => {
         // Update the cache or refetch subscription status
         queryClient.invalidateQueries({ queryKey: ['repositories', username] });
+        toast.success("Repository created successfully")
       },
     });
 }
@@ -55,6 +58,7 @@ export function useUnsubscribeToRepo() {
         // Update the cache or refetch subscription status
         queryClient.invalidateQueries({ queryKey: ['subscription', username, name , owner] });
         queryClient.invalidateQueries({ queryKey: ['repositories', username] });
+        toast.success("Unsubscribed successfully")
       },
     });
 }

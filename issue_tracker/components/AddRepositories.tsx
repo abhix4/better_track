@@ -76,7 +76,7 @@ export default function AddRepositories({username}:AddRepositoriesProps){
     return (
         <div>
             <Dialog>
-            <DialogTrigger className="bg-black text-white rounded-lg px-3 py-1 h-fit cursor-pointer">Create</DialogTrigger>
+            <DialogTrigger className="bg-black text-white rounded-sm px-3 py-1 h-fit cursor-pointer text-sm ">Create</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
                 <DialogTitle>Add a repository</DialogTitle>
@@ -90,11 +90,11 @@ export default function AddRepositories({username}:AddRepositoriesProps){
                     name="name"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel>name</FormLabel>
+                        <FormLabel>Name</FormLabel>
                         <FormControl>
                             <Input placeholder="formbricks" {...field} className="focus:outline-none"/>
                         </FormControl>
-                        <FormDescription>
+                        <FormDescription className="text-xs">
                             This is the repository name
                         </FormDescription>
                         <FormMessage />
@@ -107,11 +107,11 @@ export default function AddRepositories({username}:AddRepositoriesProps){
                     name="owner"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel>owner</FormLabel>
+                        <FormLabel>Owner</FormLabel>
                         <FormControl>
                             <Input placeholder="formbricksHq" {...field} className="focus:outline-none"/>
                         </FormControl>
-                        <FormDescription>
+                        <FormDescription className="text-xs">
                             This is the organisation's name.
                         </FormDescription>
                         <FormMessage />
@@ -119,7 +119,7 @@ export default function AddRepositories({username}:AddRepositoriesProps){
                     )}
                     />
                     </div>
-                    <Button type="submit">Search</Button>
+                    <Button type="submit" className="text-xs rounded-sm py-0 cursor-pointer h-8">Search</Button>
                 </form>
                 </Form>
             

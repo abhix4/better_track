@@ -16,9 +16,9 @@ export default function Login(){
         <div className="flex w-full h-screen">
             <div className="w-2/5 border-r border-black/10 flex items-center justify-center p-8">
                 <div>
-                <h1 className="font-semibold text-3xl">Open Source Monitoring Service</h1>
+                <h1 className="font-semibold text-3xl">Track your fav repository</h1>
                 <p className="">
-                Monitor your website or API and create your own status page within a couple of minutes. Want to know how it works?
+                Monitor issues for the subscribed ones
                 </p>
                 </div>
             </div>

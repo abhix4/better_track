@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter()
   return (
-   <div className="max-w-[1000px] mx-auto flex items-center">
+   <div className="max-w-[1000px] mx-auto flex items-center h-screen">
     {/* <LandingNav/> */}
     <div className="flex items-center justify-center flex-col gap-10 bg-[url('/gradii.png')] bg-cover bg-center w-full h-4/5 rounded-2xl">
       <p className="text-5xl text-center">
