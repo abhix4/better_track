@@ -1,5 +1,6 @@
 "use client"
 import LandingNav from "@/components/LandingNav";
+import { Github, Twitter } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -11,8 +12,10 @@ export default function Home() {
   const router = useRouter()
   return (
    <div className=" mx-auto flex items-center h-screen justify-center relative">
-    <div className="w-[80%] h-screen absolute border-r border-l z-0">
-
+    <div className="w-[80%] h-screen absolute border-r border-l z-0 flex items-start justify-end">
+    {/* <div className="mr-8 mt-16 text-black/30">
+      <a href="https://github.com/abhix4/better_track"> <Github size={20}/></a>
+    </div> */}
     </div>
     <div className="w-full h-3/4 absolute border-t border-b z-0">
 
@@ -24,7 +27,7 @@ export default function Home() {
       width={40}
       height={40}
       alt="fire" />
-      <p className="text-2xl md:text-5xl text-center max-w-[600px]">
+      <p className="text-xl md:text-5xl text-center  w-[200px] md:w-[600px] ">
       A better way to track your favourite <span className="italic">repositories</span>.
       </p>
 
