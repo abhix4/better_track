@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Ubuntu } from "next/font/google";
 import "./globals.css";
 import { SessionProviderWrapper } from "@/lib/SessionProviderWrapper";
 import { QueryClientWrapperProvider } from "@/lib/QueryClientProvider";
@@ -9,6 +9,11 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
+const ubuntu = Ubuntu({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+})
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-h-screen `}
+        className={` ${ubuntu.className}  antialiased max-h-screen `}
       >
       <QueryClientWrapperProvider>
       <SessionProviderWrapper>
