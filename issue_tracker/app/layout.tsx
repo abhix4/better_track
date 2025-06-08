@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Issues",
+  title: "Track better",
   description: "To track your fav oss",
 };
 

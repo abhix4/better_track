@@ -23,11 +23,14 @@ export default function Login(){
                 </div>
             </div>
 
-            <div className="w-3/5  flex items-center justify-center p-8 ">
-                <div className="border border-black/10 rounded-lg p-12 flex flex-col items-center ">
-                <h1 className="text-3xl font-medium ">sign in</h1>
+            <div className="w-3/5  flex items-center justify-center p-8 bg-black/1 ">
+               
+
+
+                <div className="border border-black/10  p-12 flex flex-col items-center bg-white">
+                <h1 className="text-3xl font-medium ">Sign in</h1>
                 <p>Get started now.</p>
-                <button className=" cursor-pointer bg-black text-white p-3 rounded-lg mt-4" onClick={() => signIn("github",{ callbackUrl: "/space" })}>Sign in with GitHub</button>
+                <button className=" cursor-pointer bg-black/10 text-black  p-3 text-sm mt-4" onClick={() => signIn("github",{ callbackUrl: "/space" })}>Sign in with GitHub</button>
                 </div>
             </div>
 
